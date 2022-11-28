@@ -147,6 +147,15 @@ body {
     margin-bottom: var(--margin-bottom);
 }
 
+#generate-pw:hover {
+    cursor: pointer;
+    opacity: .90;
+}
+
+#generate-pw:active {
+    transform: scale(0.9);
+}
+
 .divider {
     border-bottom: 2px solid var(--lighter-bg);
     margin-bottom: var(--margin-bottom);
@@ -182,4 +191,13 @@ body {
     padding: 0rem .5rem;
     border: #10B981 1.5px solid;
     border-radius: 0 5px 5px 0;
+}
+
+.copy-btn:hover {
+    cursor: pointer;
+    opacity: .90;
+}
+
+.copy-btn:active {
+    transform: scale(0.95);
 }
