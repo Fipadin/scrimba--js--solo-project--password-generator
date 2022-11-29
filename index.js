@@ -1,11 +1,12 @@
 const characters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "[", "}", "]", ",", "|", ":", ";", "<", ">", ".", "?",
     "/"];
-
+let firstPasswordEl = document.getElementById('first-password-el')
+let secondPasswordEl = document.getElementById('second-password-el')
 
 
 function generatePassword() {
-    let firstPassword = document.getElementById('first-password')
-    let secondPassword = document.getElementById('second-password')
+    // let firstPasswordEl = document.getElementById('first-password-el')
+    // let secondPasswordEl = document.getElementById('second-password-el')
 
     let numOne = Math.floor(Math.random() * characters.length)
     let numTwo = Math.floor(Math.random() * characters.length)
@@ -33,18 +34,34 @@ function generatePassword() {
     let numberEleven = Math.floor(Math.random() * characters.length)
     let numberTwelve = Math.floor(Math.random() * characters.length)
     
-    firstPassword.textContent = characters[numOne] + characters[numTwo] + characters[numThree] + characters[numFour] + characters[numFive] + characters[numSix] + characters[numSeven] + characters[numEight] + characters[numNine] + characters[numTen] + characters[numEleven] + characters[numTwelve]
-    secondPassword.textContent = characters[numberOne] + characters[numberTwo] + characters[numberThree] + characters[numberFour] + characters[numberFive] + characters[numberSix] + characters[numberSeven] + characters[numberEight] + characters[numberNine] + characters[numberTen] + characters[numberEleven] + characters[numberTwelve]
+    firstPasswordEl.textContent = characters[numOne] + characters[numTwo] + characters[numThree] + characters[numFour] + characters[numFive] + characters[numSix] + characters[numSeven] + characters[numEight] + characters[numNine] + characters[numTen] + characters[numEleven] + characters[numTwelve]
+    secondPasswordEl.textContent = characters[numberOne] + characters[numberTwo] + characters[numberThree] + characters[numberFour] + characters[numberFive] + characters[numberSix] + characters[numberSeven] + characters[numberEight] + characters[numberNine] + characters[numberTen] + characters[numberEleven] + characters[numberTwelve]
 }
 
-function copy() {
-    let copyText = document.getElementById('first-password')
+function copyOne() {
+    const textareaOne = document.createElement('textarea')
+    const passwordOne = firstPasswordEl.innerText
+    if (!passwordOne) {
+        return
+    }
+    textareaOne.value = passwordOne
+    document.body.appendChild(textareaOne)
+    textareaOne.select()
+    document.execCommand('copy')
+    textareaOne.remove()
+    alert('Password copied to clipboard')
+}
 
-    console.log(copyText)
-    // copyText.select()
-    //   // Copy the text inside the text field
-    //     navigator.clipboard.writeText(copyText.value);
-
-    //   // Alert the copied text
-    //     alert("Copied the text: " + copyText.value);
+function copyTwo() {
+    const textareaTwo = document.createElement('textarea')
+    const passwordTwo = secondPasswordEl.innerText
+    if (!passwordTwo) {
+        return
+    }
+    textareaTwo.value = passwordTwo
+    document.body.appendChild(textareaTwo)
+    textareaTwo.select()
+    document.execCommand('copy')
+    textareaTwo.remove()
+    alert('Password copied to clipboard')
 }
