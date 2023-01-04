@@ -201,3 +201,9 @@ body {
 .copy-btn:active {
     transform: scale(0.95);
 }
+
+.center {
+    height: 100%;
+    align-items: center;
+    align-self: center;
+}
