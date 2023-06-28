@@ -108,12 +108,14 @@ function copyPasswordToClipboard(event) {
 
   const displayOnScreen = notificationEl.style.display
 
-  if (password.trim() !== "") {
-    notificationEl.style.display = "block"
-    setTimeout(function () {
-      notificationEl.style.display = displayOnScreen
-    }, 1200)
-  }
+  notificationEl.style.display = "block"
+  setTimeout(function () {
+    notificationEl.style.display = displayOnScreen
+  }, 1200)
+  
+  setTimeout(function () {
+    notificationEl.style.display = "none"
+  }, 1200)
 }
 
 

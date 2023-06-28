@@ -67,14 +67,15 @@
     line-height: 28px;
 }
 .generate {
-    background-color: var(--accent-color);
     display: inline-flex;
+    font-family: var(--f-inter);
+    font-size: 16px;
     color: var(--white);
+    background-color: var(--accent-color);
     padding: 9px 17px 9px 15px;
     border-radius: 6px;
     border: none;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
-    font-family: var(--f-inter);
     margin-bottom: 35px;
     transition: 0.2s;
 }
@@ -101,15 +102,15 @@
 }
 .pw {
     display: flex;
+    font-family: var(--f-karla);
+    color:  var(--accent-color);
     border-radius: 6px;
     background: var(--password-bg);
     padding: 5px 10px;
     width: 47%;
     min-height: 39px;
-    color:  var(--accent-color);
     justify-content: center;
     align-items: center;
-    font-size: 14px;
     transition: 0.2s;
 }
 .pw:hover {
@@ -129,7 +130,9 @@
     padding: 5px 10px;
     margin: 0 auto;
     color:  var(--accent-color);
-    font-size: 14px;
+    font-size: 16px;
+    font-family: var(--f-inter);
+    font-weight: var(--font-w-500);
 }
 
 
