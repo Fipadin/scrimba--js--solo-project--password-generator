@@ -1,112 +1,148 @@
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
+* {
     margin: 0;
+    box-sizing: border-box;
+    font-family: inherit;
 }
 
-
-ul[role='list'],
-ol[role='list'] {
-    list-style: none;
-}
-
-
-/* Set core root defaults */
-html:focus-within {
-    scroll-behavior: smooth;
-}
-
-
-/* Set core body defaults */
-body {
-    min-height: 100vh;
-    text-rendering: optimizeSpeed;
-    line-height: 1.5;
-}
-
-
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-    text-decoration-skip-ink: auto;
-}
-
-
-/* Make images easier to work with */
-img,
-picture {
-    max-width: 100%;
-    display: block;
-}
-
-
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-    font: inherit;
-}
-
-
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-    html:focus-within {
-        scroll-behavior: auto;
-    }
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
-
-
-/* CUSTOM PROPERTIES */
 :root {
-    --font-size: 16px;
-    --font-w400: 400;
-    --font-w700: 700;
-    --body-background: #1C1C1C;
-    --container-background: #1F2937;
-    --container-background-white: #ECFDF5;
-    --lighter-bg: #273549;
-    --accent-color: #4ADF86;
-    --accent-bg-color: #10B981;
-    --white: #fff;
-    --p-color: #D5D4D8;
-    --font-inter: 'Inter', sans-serif;
-    --font-karla: 'Karla', sans-serif;
-    --margin-bottom: 2rem;
+    --accent-color: #10B981;
+    --bg-color-light: #ECFDF5;
+    --bg-color-dark: #1F2937;
+    --medium-gray: #D5D4D8;
+    --light-medium-gray: #2F3E53;
+    --white: #FFF;
+    --dark: #2B283A;
+    --password-bg: #273549;
+    --f-karla: 'Karla', sans-serif;
+    --f-inter: 'Inter', sans-serif;
+    --font-w-400: 400;
+    --font-w-500: 500;
+    --font-w-700: 700;
+    --font-w-800: 800;
 }
 
-
-/* UTILITY CLASSES */
+.container {
+    width: 550px;
+    flex-shrink: 0;
+    background-color: var(--bg-color-dark);
+    padding: 50px 64px;
+    margin: 50px auto;
+    transition: 0.2s;
+}
+#theme {
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin-left: auto;
+    margin-bottom: -20px;
+    margin-top: -15px;
+    margin-right: -25px;
+    border-radius: 50px;
+    border: none;
+    background-color: var(--white);
+    transition: 0.2s;
+}
+#theme:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.title {
+    color: var(--white);
+    font-size: 40px;
+    font-family: var(--f-karla);
+    font-weight: var(--font-w-800);
+    line-height: 40px;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+}
 .accent-color {
     color: var(--accent-color);
+    text-shadow: 0 0 1px var(--bg-color-dark);
 }
+.subtitle {
+    color: var(--medium-gray);
+    margin-bottom: 51px;
+    font-size: 20px;
+    font-family: var(--f-inter);
+    line-height: 28px;
+}
+.generate {
+    background-color: var(--accent-color);
+    display: inline-flex;
+    color: var(--white);
+    padding: 9px 17px 9px 15px;
+    border-radius: 6px;
+    border: none;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    font-family: var(--f-inter);
+    margin-bottom: 35px;
+    transition: 0.2s;
+}
+.generate:hover {
+    cursor: pointer;
+}
+.generate:active {
+    transform: scale(0.9)
+    
+}
+.separator {
+    background-color: var(--light-medium-gray);
+    width: 100%;
+    height: 1px;
+    margin-bottom: 35px;
+}
+.pw-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+.pw:not(:empty):active {
+  transform: scale(0.9);
+}
+.pw {
+    display: flex;
+    border-radius: 6px;
+    background: var(--password-bg);
+    padding: 5px 10px;
+    width: 47%;
+    min-height: 39px;
+    color:  var(--accent-color);
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    transition: 0.2s;
+}
+.pw:hover {
+    cursor: pointer;
+}
+#notification {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.copied-text {
+    display: none;
+    position: fixed;
+    top: 10px;
+    border-radius: 6px;
+    background: var(--password-bg);
+    padding: 5px 10px;
+    margin: 0 auto;
+    color:  var(--accent-color);
+    font-size: 14px;
+}
+
+
+/* OLD CSS */
+
+/* UTILITY CLASSES */
+/* .accent-color {
+    color: var(--accent-color);
+} */
 
 
 /* STYLING */
-body {
+/* body {
     background-color: var(--body-background);
 }
 
@@ -200,7 +236,7 @@ body {
 
 .copy-btn:active {
     transform: scale(0.95);
-}
+} */
 
 /* .fa-copy {
     /* align-items: center;
